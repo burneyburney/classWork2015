@@ -1,0 +1,56 @@
+modular programming
+	breaking a program up into smaller, manageable functions or modules
+
+function
+	a collection of statements to perform a task
+
+Motivation for modular programming:
+	improves maintainability of programs
+	simplifies the process of writing programs
+
+int main()  =  function
+
+how to write functions in C++ 
+
+Function call
+	statement causes a function to execute
+
+Function definition
+	statements that make up a function
+
+function definnition
+	return type
+	name
+	parameter list
+	body 
+
+PG-301  Figure 6-2
+int[Return Type] main[function name] ()[Parameter list]
+{	[Function Body]
+	cout << "Hello World\n;
+	return 0;
+}
+
+2 types of functions..
+	void - if a function does not return a value its return type
+	value returning function
+
+void printheading()
+{
+	cout << "monthly calls\n"
+}
+
+Function prototypes
+Header		void printHeading()
+Prototype	void printHeading();
+
+Values passed to functions are arguments
+variables in a function that hold the values passed t  _ arguments
+
+CHANGES TO THE PARAMETER INT HE FUNCTION DO NOT AFFECT THE VALUE OF THE ARGUMENT! 
+
+
+pg 318 program 6-10
+	2 parameters in showFees
+	3 functions
+	

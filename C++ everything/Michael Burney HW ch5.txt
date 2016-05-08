@@ -1,0 +1,200 @@
+//Michael Burney
+//pg 293 ex 1
+//Sum of numbers
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	//declare variables
+	double positiveInteger;
+	double x = 1;
+	double sum = 0;
+
+	//enter integer
+	cout << "Please input a positive Integer." << endl;
+	cin >> positiveInteger;
+
+	//loop statement
+	if (positiveInteger >= 1){
+		for (int i = x; i <= positiveInteger; i++)
+		{
+		sum = sum + i;
+		cout << sum << endl;
+		}
+		cout << sum << endl;
+							}
+
+	else{
+		cout << "Please enter a positive integer next time." << endl;
+		}
+	return 0;
+}// end of program
+
+/******************************************************************
+Please input a positive Integer.
+
+20
+1
+3
+6
+10
+15
+21
+28
+36
+45
+55
+66
+78
+91
+105
+120
+136
+153
+171
+190
+210
+210
+Press any key to continue . . .
+**********************************************************************/
+
+
+
+
+
+
+//Michael Burney
+//pg 295 ex 12
+// Celsius to Fahrenheit Table
+
+#include <iostream> 
+#include <iomanip> 
+using namespace std;
+
+//declare variables
+double Celsius = 8;
+double Fahrenheit = 10;
+
+
+//FORMULA C-F: C x 9/5 + 32 = F 
+double get_fahrenheit(const double constCelsius)
+{
+	return constCelsius * 9.0 / 5.0 + 32.0;
+}
+
+//FORMULA F-C: (F - 32) x 5/9 = C 
+double get_celsius(const double constFahrenheit)
+{
+	return (constFahrenheit - 32) * (5.0 / 9.0);
+}
+
+int main()
+{	
+cout << setw(Celsius) << "Celsius" << " " << setw(Fahrenheit) << "Fahrenheit" << endl;
+
+	for (int i = 1; i <= 20; i++) {
+		cout << setw(Celsius) << setprecision(2) << fixed << static_cast<double>(i) <<
+			" " << setw(Fahrenheit) << setprecision(2) << fixed << get_fahrenheit(static_cast<double>(i)) << endl;
+	}
+	return 0;
+}//end of program
+
+/***************************************************
+Celsius Fahrenheit
+1.00      33.80
+2.00      35.60
+3.00      37.40
+4.00      39.20
+5.00      41.00
+6.00      42.80
+7.00      44.60
+8.00      46.40
+9.00      48.20
+10.00      50.00
+11.00      51.80
+12.00      53.60
+13.00      55.40
+14.00      57.20
+15.00      59.00
+16.00      60.80
+17.00      62.60
+18.00      64.40
+19.00      66.20
+20.00      68.00
+Press any key to continue . . .
+**************************************************/
+
+
+
+
+
+
+
+
+
+
+
+//Michael Burney
+//Random Number Guessing game
+//pg 297 ex 20
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+	//declare variables
+	unsigned seed = time(0);
+	 int MIN_VALUE = 0;  //minimum value
+	 int MAX_VALUE = 10; //maximum value
+	double guess1;
+	double rngNumber = seed;
+
+	seed = MIN_VALUE - MAX_VALUE;
+
+	//seed RNG
+	srand(seed);
+
+	// ask the user to guess what the number is
+	cout << "A Random Number inbetween 0 and 10 was selected. Guess which number it was: ";
+	cin >> guess1;
+
+	rngNumber = rand() % 10; (MAX_VALUE - MIN_VALUE) + MIN_VALUE;
+
+	//TEST ZONE
+	//cout << rngNumber << endl;
+	//TEST ZONE
+	
+		if (guess1 == rngNumber)
+		{
+			cout << "Correct!You Guessed it!" << endl;
+		}
+
+		else if (guess1 > rngNumber) {
+			cout << "Too high, try again" << endl;
+		}
+		else if (guess1 < rngNumber)
+		{
+			cout << "Too low, try again." << endl;
+		}
+		else{
+			cout << "Please enter a number between 0 and 10" << endl;
+		}
+
+	return 0;
+}//end of program
+
+/**************************************************************************************
+PROGRAM DOES NOT WORK
+Random Number Generator does not reset
+Program does not repeat upon fail attempt
+
+**************************************************************************************
+A Random Number inbetween 0 and 10 was selected. Guess which number it was: 2
+Too low, try again.
+Press any key to continue . . .
+
+**************************************************************************************/

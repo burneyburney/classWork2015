@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Boxed In</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+</head>
+<body onload="startShrinking()">
+<div id="i1" style="position:absolute;background-color:blue"></div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var clipSpeed=5
+var clipRight = 0;
+var clipLeft = 0;
+var clipTop = 0;
+var boxSize;
+var stopShrinking;
+var clipBottom = 0;
+var clipBox=document.getElementById("i1").style;
+function startShrinking() {
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		boxSize = document.documentElement.clientWidth/document.documentElement.clientHeight;
+		clipRight=document.documentElement.clientWidth;
+		clipBox.width = clipRight + "px";
+		clipBottom=document.documentElement.clientHeight;
+		clipBox.height=clipBottom + "px";
+	}
+	else {
+		boxSize = window.innerWidth/window.innerHeight;
+		clipRight=window.innerWidth;
+		clipBox.width = clipRight + "px";
+		clipBottom=window.innerHeight;
+		clipBox.height=clipBottom + "px";
+	}
+	stopShrinking=setInterval("shrinkBox()",100);
+}
+function shrinkBox(){
+	if (navigator.appName == "Microsoft Internet Explorer")
+		minBoxSize=document.documentElement.clientWidth/2;
+	else
+		minBoxSize=window.innerWidth/2
+	if (clipLeft>minBoxSize){
+		clearInterval(stopShrinking);
+		clipBox.display="none";
+	}
+	clipBox.clip="rect(" + clipTop + "px " + clipRight + "px " + clipBottom + "px " + clipLeft + "px)"
+	clipLeft += boxSize * clipSpeed;
+	clipTop += clipSpeed;
+	clipRight -= boxSize*clipSpeed;
+	clipBottom -= clipSpeed;
+}
+/* ]]> */
+</script>
+</body>
+</html>

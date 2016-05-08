@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Math Tables</title>
+	
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+	 
+	<script type="text/javascript">
+
+
+	</script>
+	
+</head>
+
+<body>
+
+	<h1>Math Tables</h1>
+	
+	<form action="" method="get" 
+	
+	<p><input type="button" value="Addition Table" onclick="additionTable();"/><br />
+	
+	<input type="button" value="Multiplication Table" onclick="multiplicationTable();" /></p>
+	
+	</form>
+	
+	<script type="text/javascript">
+	function multiplicationTable();{
+	  var myWindow;
+		myWindow  = window.open("multiplicationTable()", "multiplicationTable()", "width=400, height=200");
+		document.write("<h1>Multiplication table</h1>");
+		document.write("<table border=1 width=2%"); 
+			for (var x = 1; x <= 9; x++ ){
+				document.write("<tr>");
+				document.write("<td>" + x + "</td>"); 
+			for ( var y = 2; y <= 9; y++ ) {
+				document.write("<td>" + x * y + "</td>");
+				}
+				document.write("</tr>");
+			} 
+			document.write("</table>")
+		</script>
+		
+	
+</body>
+
+</html>
+
+<!--
+no buttons work
+function probably typed out incorrectly
+window.open probably used incorrectly
+ -->

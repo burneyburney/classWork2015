@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+<title>Lab 8-4</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+    function storePass(form) {
+      // Create cookie here
+      document.cookie = "password=" + form.pWord.value
+     alert(document.cookie) 
+    location.href = "lab8-4a.htm"
+}
+//-->
+</script>
+</head>
+<body>
+<h3>CIW JavaScript Specialist</h3>
+<hr />
+<strong>Please enter your password</strong>
+<form><input type="text" name="pWord" />
+<p><input type="button" value="Submit" onClick="storePass(this.form);"> <input type="Reset" /></p>
+</form>
+</body>
+</html>

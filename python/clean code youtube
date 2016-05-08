@@ -1,0 +1,115 @@
+boolean function open_pod_bay_doors () {
+	int c, d, e, = 0;			// utility variables
+
+	// declarations
+	int door_open_command 	 = 22; 	// code to open doors
+	int door_close_command	 = 23;	// code to close doors
+	int door_slide_command 	 = 24; 	// code to slide doors
+	int door_slide_amount	 = 0;	// 0 is closed, 255 is fully open	
+	
+	// timing loop for pod bay doors
+	loop {
+			// pre-open status check
+			code;
+			code;
+			code;
+			code;
+			loop {
+					code; //waiting on status
+			}	
+			
+			// validation routine
+			code;
+			code;
+			
+			// post-operation status check
+			code a; // powers up scanning laser
+			code b; // scan for debris
+			
+			// check for objects in pod bay doors
+			code;
+			code;
+			loop a {
+						  // scan until debris gone
+					code; // basic loop
+					if (a=b) {
+								code; // exit routine, debris gone
+						} else{
+								code; // continue to remove debris
+						
+						}
+						else {
+								code;
+						}
+				 }
+			
+			code c;
+			
+			// allocate power for opening doors
+			
+			// actual door open command
+			for {
+					--door_slide_amount;
+				}
+			// send back result of open command
+	}
+}
+
+/////////////////////////////////////////////////////////
+// Hal controls: close pod bay doors
+// returns true if success, false otherwise
+////////////////////////////////////////////////////////
+
+boolean function close_pod_bay_doors () {
+	code;
+}
+
+
+//////////////////////////////////////
+// more notes about values
+// 
+//
+//
+//
+///////////////////////////////////////////
+
+
+
+
+	if (failure) {
+					return failure_value;
+	}
+	return value;
+}
+boolean function are_pod_bay_doors_open () {
+	code;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

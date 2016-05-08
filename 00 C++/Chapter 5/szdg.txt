@@ -1,0 +1,68 @@
+The incriment and decrement operators
+
+++ is the increment operator</br>
+	it adds to a variable</br>
+
+val++; is the same as val = val + 1
+
+prefix vs postfix
+
+Intro to loops: The while Loop
+	loop- a control structure that causes a statement oor statements to repeat
+General format of the while loop:
+	while (expression)
+	statement;
+expression is evaluated
+	if true then statement is executed, and expression is evaluated again
+	if false, then the loop is finished and program statements following statement execute
+
+the while loop in program 5-3
+	
+counter - a variable that is incremented or decremented each timea a loop repeats
+can be used to control execution of the loop aka loop control variable
+must be initialized before entering  loop
+
+LOOPS-
+while
+do-while
+for
+
+****give a while loop, and write a corresponding for loop***
+
+for(initialization; test; update)
+	statement; // or block in {}
+
+number=1
+while(number <=3)
+	cout << "Hello";
+	number++;
+	and while
+
+for(number=1; number<=3; number++)
+	cout << "Hello" << endl;
+//end for
+
+for(set; parameters; incriment)
+	cout <<"say this while true" << endl;
+
+
+Sentinels
+	sentinel: a value in a list of values that indicates end of data
+
+Nested Loops
+	a nested loop is a loop inside the body of a nother loop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

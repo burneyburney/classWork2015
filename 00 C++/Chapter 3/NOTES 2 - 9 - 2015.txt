@@ -1,0 +1,31 @@
+getline instead of cin because we need to enter spaces
+
+cin ignores any leading whitespace characters (spaces,tabs,or line breaks)
+
+getline is a workaround.
+
+for one character
+cin.get:
+cin.get(ch);
+
+string state= "Texas";
+int size = state.length();
+will return 5
+
+concatenate (join)
+greeting2 = greeting1 + name1;
+greeting 1= greeting1 + name2;
+
+3.9
+Require cmath header file
+take double as input, return a double
+
+cstdlib
+rand(): returns random number (int) between 0 and the largest int the compute holds.
+yields same sequence of numbers each time program is run.
+srand(x):  initializes random number generator with    unsigned int x
+
+hand tracing a program
+hand trace a program act as if you are the computer, executing a program:
+	step through and execute each sxtatement one by one
+	

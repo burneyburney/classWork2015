@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Javascript</title>
+	</head>
+<body>
+	<script>
+	var SillyString ="HeLLo THERE, hOW ARE yOu DOINg?";
+	document.write("<br><br>" + SillyString);
+
+	var lowerString = SillyString.toLowerCase();
+	document.write("<br><br>" + lowerString);
+
+	var firstCharacter = lowerString[0];
+	document.write("<br><br>" + firstCharacter);
+
+	var firstCharacterUpper = firstCharacter.toUpperCase();
+	document.write("<br><br>" + firstCharacterUpper);
+
+
+	var restOfString = lowerString.slice(1);
+	document.write("<br><br>" + restOfString);
+
+	var blue = firstCharacterUpper + restOfString;
+	document.write("<br><br>" + blue);
+	</script>
+</body>
+</html>

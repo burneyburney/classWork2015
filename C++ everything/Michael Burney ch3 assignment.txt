@@ -1,0 +1,181 @@
+//Michael Burney
+//use precision of 2
+//Dollar to Yen and Euro conversion
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	// 1 dollar = 98.93 yen
+	// 1 dollar = 0.74 euros
+
+	//declare variables
+	double dollarAmount;
+	double YEN_PER_DOLLAR = 98.93;
+	double EUROS_PER_DOLLAR = 0.74;
+
+	//enter dollarAmount
+	cout << "Enter Dollar amount to convert to Yen and Euros!" << endl;
+	cin >> dollarAmount;
+
+	// calculations
+	double yenAmount = dollarAmount * YEN_PER_DOLLAR;
+	double euroAmount = dollarAmount * EUROS_PER_DOLLAR;
+
+	//display results on screen
+	cout << "Yen = " << fixed << setprecision(2)<< yenAmount << endl;
+	cout << "Euro = " << fixed << setprecision(2)<< euroAmount << endl;
+
+	return 0;
+}
+//end of program
+
+/*****************************************************
+Enter Dollar amount to convert to Yen and Euros!
+55.55
+Yen = 5495.56
+Euro = 41.11
+Press any key to continue . . .
+*****************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Michael Burney
+// 2/15/2015
+// Math tutor, rand numbers.
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+
+	// set time as variable
+	unsigned seed = time(0); 
+
+	// seed Random Number Generator
+	srand(seed);
+
+	// declare constants
+	const int MIN_VALUE = 100; //minimum value
+	const int MAX_VALUE = 999; //maximum value
+
+	// declare variables
+	double number1 = (rand() % (MAX_VALUE - MIN_VALUE +1)) + MIN_VALUE;
+	double number2 = (rand() % (MAX_VALUE - MIN_VALUE +1)) + MIN_VALUE;
+	double result;
+	
+	// instructions
+		cout << " Add the 2 numbers together..." << endl;
+
+	// display 2 random numbers on the screen
+		cout <<" " << number1 << endl;
+		cout <<"+" << number2 << endl;
+
+	// add the 2 numbers together
+		result = number1 + number2;
+
+	// make the program pause
+		cout << "Press any key to receive answer.";
+		cin.get();
+
+	// press a  Key for the program to display the solution
+		cout << result << endl;
+
+	return 0;
+}// end of program
+
+/************************************
+Add the 2 numbers together...
+232
++220
+Press any key to receive answer.j
+452
+Press any key to continue . . .
+**************************************/
+
+
+
+
+
+
+
+// Michael Burney
+// Interest Earned problem
+// ex 18 pg 145
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main(){
+
+	//declare variables
+	double principal;
+	double rate;
+	int T;
+	double amount;
+	double interest;
+	double interestAmount;
+
+	//ask user for amounts
+	cout << setprecision(2) << fixed;
+	cout << "Enter the principal: ";
+	cin >> principal;
+	cout << "Enter the interest rate: ";
+	cin >> rate;
+	cout << "Enter the number of times the interest is compounded: ";
+	cin >> T;
+
+	//calculations
+	amount = principal * pow((1 + (rate / T)), T);
+	interestAmount = rate * 100;
+	
+	//output results on screen as a report 
+	cout << "Interest Rate: " << "\t\t\t" << rate <<"%"<<endl;
+	cout << "Times Compounded: " << "\t\t" << T << endl;
+	cout << "Principal: " << "\t\t\t" << principal << endl;
+	cout << "Interest: " << "\t\t\t" << interestAmount << endl;
+	cout << "Amount in Savings: " << "\t\t" << amount << endl;
+
+	return 0;
+}// end of program
+
+/*********************************************************
+Enter the principal: 1000
+Enter the interest rate: 4.25
+Enter the number of times the interest is compounded: 12
+Interest Rate:                  4.25%
+Times Compounded:               12
+Principal:                      1000.00
+Interest:                       425.00
+Amount in Savings:              38024.67
+Press any key to continue . . .
+*********************************************************/
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Buzz</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var widthMax = 0;
+var heightMax = 0;
+var buzzSpeed = new Array(3)
+buzzSpeed[0] = 10;
+buzzSpeed[1] = 8;
+buzzSpeed[2] = 12;
+buzzSpeed[3] = 14;
+buzzSpeed[4] = 10;
+var xPosition = new Array(3);
+xPosition[0] = -20;
+xPosition[1] = -20;
+xPosition[2] = -20;
+xPosition[3] = -20;
+xPosition[4] = -20;
+var yPosition = new Array(3);
+yPosition[0] = 0;
+yPosition[1] = 100;
+yPosition[2] = 200;
+yPosition[3] = 300;
+yPosition[4] = 400;
+var xDirection = new Array(3);
+xDirection[0] = "right";
+xDirection[1] = "right";
+xDirection[2] = "right";
+xDirection[3] = "right";
+xDirection[4] = "right";
+var yDirection = new Array(3);
+yDirection[0] = "down";
+yDirection[1] = "up";
+yDirection[2] = "down";
+yDirection[3] = "up";
+yDirection[4] = "down";
+function setBug(newStartPoint) {
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		widthMax = document.documentElement.clientWidth;
+		heightMax = document.documentElement.clientHeight;
+	}
+	else {
+		widthMax = window.innerWidth-14;
+		heightMax = window.innerHeight;
+	}
+	setInterval("flyBug(0)",30);
+	setInterval("flyBug(1)",30);
+	setInterval("flyBug(2)",30);
+	setInterval("flyBug(3)",30);
+	setInterval("flyBug(4)",30);
+}
+function flyBug(curBug) {
+	var activeBug = document.getElementById("bugImage" + curBug);
+	var activeElement = document.getElementById("bugElement" + curBug);
+	if (xDirection[curBug] == "right" && xPosition[curBug] > (widthMax - activeBug.width - buzzSpeed[curBug]))
+		xDirection[curBug] = "left";
+	else if (xDirection[curBug] == "left" && xPosition[curBug] <= 0)
+		xDirection[curBug] = "right";
+	if (yDirection[curBug] == "down" && yPosition[curBug] > (heightMax - activeBug.height - buzzSpeed[curBug]))
+		yDirection[curBug] = "up";
+	else if (yDirection[curBug] == "up" && yPosition[curBug] <= 0)
+		yDirection[curBug] = "down";
+	if (xDirection[curBug] == "right")
+		xPosition[curBug] = xPosition[curBug] + buzzSpeed[curBug];
+	else if (xDirection[curBug] == "left")
+		xPosition[curBug] = xPosition[curBug] - buzzSpeed[curBug];
+	else
+		xPosition[curBug] = xPosition[curBug];
+	if (yDirection[curBug] == "down")
+		yPosition[curBug] = yPosition[curBug] + buzzSpeed[curBug];
+	else if (yDirection[curBug] == "up")
+		yPosition[curBug] = yPosition[curBug] - buzzSpeed[curBug];
+	else
+		yPosition[curBug] = yPosition[curBug];
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		activeElement.style.left = xPosition[curBug] + document.documentElement.scrollLeft + "px";
+		activeElement.style.top = yPosition[curBug] + document.documentElement.scrollTop + "px";
+	}
+	else {
+		document.getElementById("bugElement" + curBug).style.left = xPosition[curBug] + window.screenX + "px";
+		document.getElementById("bugElement" + curBug).style.top = yPosition[curBug] + window.screenY + "px";
+	}
+}
+window.onresize = setBug;
+/* ]]> */
+</script>
+</head>
+<body onload="setBug()">
+<div id="bugElement0" style="position:absolute;left:-20px;top:0px"><img id="bugImage0" src="bug.gif" alt="Image of a bug" height="48" width="48" /></div>
+<div id="bugElement1" style="position:absolute;left:-20px;top:100px"><img id="bugImage1" src="bug.gif" alt="Image of a bug" height="48" width="48" /></div>
+<div id="bugElement2" style="position:absolute;left:-20px;top:200px"><img id="bugImage2" src="bug.gif" alt="Image of a bug" height="48" width="48" /></div>
+<div id="bugElement3" style="position:absolute;left:-20px;top:300px"><img id="bugImage3" src="bug.gif" alt="Image of a bug" height="48" width="48" /></div>
+<div id="bugElement4" style="position:absolute;left:-20px;top:400px"><img id="bugImage4" src="bug.gif" alt="Image of a bug" height="48" width="48" /></div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+input 
+output
+processing
+
+algorithim 
+
+input - how many hrs did you work
+input - 
+output -
+processing - multiply the 2 numbers
+
+machine language- although the previous algorithm defines the steps for calculating the gross pay, it is not ready to be executed ont he computer.
+
+
+ ; ends a statement
+
+cin  >> rate;   <<----(ex)
+
+syntax - the rules of grammer that must be folloed when writing a program
+	controls the use of key words operators programmer defined symbols and punctuation
+
+variable - named given  to storag elocation int he computer's memory for holding a piece of data
+	   (hour pay rate)
+
+
+(ex) double hours, rate, pay;
+
+
+SUBMIT ASSIGNMENT 1 BY MONDAY

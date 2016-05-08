@@ -1,0 +1,136 @@
+the appName and appVersion properties
+*three arguements
+onmouseout="status=";return true;">visit CIW </a>
+The Array object
+January 1, 2012
+The window object
+the alert display: http:
+Yes, scrolling is possible using window.scrollTo().
+src
+open("www.ciwcertified.com","CIW","");
+the document object
+Add if (document.images) to verify that the browser supports images.
+The alert will display: http:
+Browser objects, lagnuage objects and form field objects
+the location object
+
+
+
+What is the default object in JavaScript?
+	The window object
+
+Which of the following is the container of the form object?
+	the document objects
+
+Which of the following allows you to use several properties and/or methods with a single object?
+	the with statement
+
+What is the one property associated with the history object?
+	length
+
+You are developing a Web application that relies on images and JavaScript for user interaction. You have included a <noscript> tag to inform the user that JavaScript is required. What (if any) additional step should you take?
+	Add if (document.images) to verify that the browser supports images.
+
+Using JavaScript, you have opened a window with no address bar. Now you want to display the current URL in the status bar. Which line of code will achieve that result?
+	status = location.href;
+
+Which JavaScript object represents the frame of the browser and the mechanisms associated with it?
+	The window object
+
+Which line of code will redirect the browser user to the page she was previously viewing?
+	...history...
+
+Which X/HTML tag corresponds to the document object in JavaScript?
+	
+
+Which JavaScript object allows you to specify URLs in a script?
+	The location object
+
+Which of the following is the container of the form object?
+	The document object
+
+Which line of code demonstrates the correct JavaScript syntax to open a new window that points to www.CIWcertified.com?
+	open("www.ciwcertified.com","CIW","");
+
+Which X/HTML tag corresponds to the document object in JavaScript?
+	<body>
+
+Which JavaScript object allows you access to previously visited Web page URLs?
+	The history object
+
+Is it possible to scroll a document using JavaScript?
+	Yes, scrolling is possible using window.scrollTo().
+
+Which of the following objects is a built-in JavaScript object that is not part of the W3C Document Object Model (DOM)?	
+	The Array object
+
+Consider the following code:
+with (document) {
+open();
+}
+The open() method of which object is being invoked?
+	The document object
+
+Which JavaScript object provides essential information if you must code your script for use in different browsers?
+	The navigator object
+
+You have opened a window to http://www.myweb.com/faq/answers.htm?protocol=email. Consider the following alert:
+alert(location.protocol);
+What will this alert display if added to the code of your document?
+	The alert will display:http:
+
+Which JavaScript object is a combination of the content and interface elements that constitute the current Web page?
+	The document object
+
+Why should the with statement be used with caution?
+	It can be difficult to control because it allows you to use an object 		without explicitly stating it each time.
+
+Which of the following code segments correctly uses JavaScript to preload images for an X/HTML page?
+	if (document.images) {
+	var pic1, pic2;
+	pic1 = new Image();
+	pic1.src = "images/pic1.gif";
+	pic2 = new Image();
+	pic2.src = "images/pic2.gif";
+	}
+
+What does the with statement tell your script?
+	For the body of the statement, any references that follow refer to the 	same object.
+
+You have a link on your Web page. You want to display a message in the status bar when a user hovers his mouse over the link. Which code will achieve these results?
+	<a href="http://www.CIWcertified.com"
+	onmouseover="status='Visit the CIW Web site.';return true;"
+	onmouseout="status='';return true;">Visit CIW</a>
+
+Which line of code will redirect the browser user to the page she was previously viewing?
+	history.back();
+
+The JavaScript object model divides commonly used objects into what groups?
+	Browser objects, language objects and form field objects
+
+You are developing a Web application that requires features available only in the latest version of certain browsers. Which property or properties of the navigator object must you include to verify that the user is employing one of the correct browsers?
+	The appName and appVersion properties
+
+You have created a new mobile interface for your Web application. You want to redirect users to the mobile-optimized site when they access the application from a mobile device. To do this, you can combine the appName property of the navigator object with:
+	the location object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

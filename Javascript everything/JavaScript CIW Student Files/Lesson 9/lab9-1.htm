@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lab 9-1: Employee Database</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+    
+  // Complete the employeeObject constructor
+  // Remember to add a method called showEmployee
+  function employeeObject(name,department,extension) {
+
+  
+  
+  
+    }
+  
+      // Instantiate 3 instances of employeeObject
+  // Important - Start your array index numbers with 1
+      var employees = new Array();
+  employees[0] = "Select Employee";
+                               ("Mai Li", "Sales", 551);
+                               ("Maria Alvarez", "Human Resources", 441);
+                               ("Tom Smith", "Marketing", 331);
+  
+  len = employees.length;
+  
+    function showEmployee() {
+      var info = "";
+  // Complete the showEmployee() function
+    
+    
+    
+      alert(info);
+    }
+
+    function showAllEmployees() {
+        var info = "";
+    for (var i = 1; i < len; i++) {
+        info += "Employee: " + employees[i].name + "\n";
+        info += "Department: " + employees[i].department +  "\n";
+    info += "Extension: " + employees[i].extension + "\n\n";
+      }
+    
+    alert(info);
+    }
+
+//-->
+</script>
+</head>
+<body>
+<h3>Employee Database</h3>
+<hr />
+<form name="empForm" id="empForm">
+<strong>Select name to view information:</strong> 
+<select name="empName" onchange="employees[this.selectedIndex].showEmployee();this.selectedIndex=0;">
+<script language="JavaScript" type="text/javascript">
+<!--
+
+  for (var i = 0; i < len; i++) {
+    if(i == 0) document.write("<option>" + employees[i]) + "</option>";
+    else document.write("<option>" + employees[i].name) + "</option>";
+  }
+  
+//-->
+</script>
+</select>
+<p>
+<input type="button" value="Show All Employees" onclick=
+"showAllEmployees();" />
+</p>
+</form>
+</body>
+</html>

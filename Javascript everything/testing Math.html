@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>^^^^MathTable </title>
+</head>
+<body>
+<script type="text/javascript">
+//function multiplicationTable();{
+  var myWindow = window.open("multiplicationTable()", "multiplicationTable()", "width=400, height=200")
+	document.write("<h1>Multiplication table</h1>");
+	document.write("<table border=1 width=2%"); 
+	for (var x = 1; x <= 9; x++ ){
+		document.write("<tr>");
+		document.write("<td>" + x + "</td>");
+	for ( var y = 2; y <= 9; y++ ) {
+        document.write("<td>" + x * y + "</td>");
+		}
+		document.write("</tr>");
+	} 
+	document.write("</table>"); 
+}
+</script>
+<h1> html </h1>
+<hr/>
+
+<input type="button" value="myWindow form" onclick="window.open(myWindow());"/><br />
+<input type="button" value="multiplication form" onclick="window.open(multiplicationTable());" />
+</body>
+</html>

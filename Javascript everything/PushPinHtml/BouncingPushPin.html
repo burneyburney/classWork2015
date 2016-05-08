@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Bouncing Push Pin</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var pins = new Array(9);
+var curPin = 0;
+var direction;
+var begin;
+var imagesLoaded = 0;
+for(var i = 0; i < 9; ++i) {
+	pins[i] = new Image();
+	pins[i].src = "pin" + i + ".gif";
+	if (i == 8)
+		begin = setInterval("swayPin()", 100);
+}
+function swayPin() {
+        if (curPin == 0)
+			direction = "right";
+        else if (curPin == 8)
+			direction = "left";
+
+        if (direction == "right")
+			++curPin;
+        else if (direction == "left")
+			--curPin;
+        document.getElementsByTagName("img")[0].src = pins[curPin].src;
+}
+/* ]]> */
+</script>
+</head>
+<body>
+<h1>Bouncing Push Pin</h1>
+<p><img src="pin0.gif" height="75" width="75" alt="Image of a pushpin." /></p>
+</body>
+</html>

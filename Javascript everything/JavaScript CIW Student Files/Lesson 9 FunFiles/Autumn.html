@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Falling Leaves</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var leaves = new Array(6);
+var numLeaves = 8;
+var yPosition = new Array();
+var xPosition = new Array();
+var fallSpeed = new Array();
+var fallStep = new Array();
+var fallNextStep = new Array();
+for (var imagesLoaded = 0; imagesLoaded < 6; ++imagesLoaded) {
+     leaves[imagesLoaded] = new Image();
+     leaves[imagesLoaded].src = "leaf"
+           + (imagesLoaded + 1) + ".gif";
+    if (imagesLoaded == 5)
+           startFalling();
+}
+function startFalling() {
+	for (i = 0; i < numLeaves; i++) {
+		var P = Math.floor(Math.random() * leaves.length);
+		var randomLeaf = leaves[P].src;
+		document.write('<img id="si'+i+'" src="'+randomLeaf+'" style="position:absolute;top:0px;left:0px">');
+	}
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		var heightMax=window.document.documentElement.clientHeight;
+		var widthMax=window.document.documentElement.clientWidth;
+	}
+	else {
+		var heightMax=window.innerHeight
+		var widthMax = window.innerWidth-70;
+	}
+	for (i=0; i < numLeaves; i++){
+		yPosition[i] = Math.round(Math.random() * heightMax);
+		xPosition[i] = Math.round(Math.random() * widthMax);
+		fallSpeed[i] = Math.random() * 5 + 3;
+		fallNextStep[i] = 0;
+		fallStep[i] = Math.random() * 0.1 + 0.05;
+	}
+	fall();
+}
+function fall(){
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		var heightMax = document.documentElement.clientHeight;
+		var widthMax = document.documentElement.clientWidth;
+		var yPositionElement = document.documentElement.scrollTop;
+		var xPositionElement = document.documentElement.scrollLeft;
+	}
+	else {
+		var heightMax = window.innerHeight;
+		var widthMax = window.innerWidth - 70;
+		var yPositionElement = window.screenY;
+		var xPositionElement = window.screenX;
+	}
+	for (i=0; i < numLeaves; i++) {
+		var y1 = fallSpeed[i] * Math.sin(90 * Math.PI / 180);
+		var x1 = fallSpeed[i] * Math.cos(fallNextStep[i]);
+		yPosition[i] += y1;
+		xPosition[i] += x1;
+		if (yPosition[i] > heightMax) {
+			yPosition[i] =- 60;
+			xPosition[i] = Math.round(Math.random() * widthMax);
+			fallSpeed[i]=Math.random() * 5 + 3;
+		}
+		document.getElementById("si"+i).style.left = Math.min(widthMax,xPosition[i]) + "px";
+		document.getElementById("si"+i).style.top = yPosition[i]+yPositionElement + "px";
+		fallNextStep[i] += fallStep[i];
+	}
+	setTimeout('fall()',20);
+}
+/* ]]> */
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,80 @@
+cout
+cin <<--
+	standard input object
+	like count, requires iostream file
+	used to read input from keyboard
+	cin >> 
+	input stored in variable
+
+<iostream> has code for cout and cin 
+(thats why we use it)
+---------------------------------------------------------------------------
+
+#include <iostream
+using namespace std;
+
+int main()
+	int length, width, area;
+
+	cout << "This program calculates the area of a ";
+	cout << "rectangle.\n";
+	cout << "what is the length of the rectangle? ";
+	cin >> length;
+	cout << "what is the width of the rectangle? ";
+	cin >> width;
+	area = length * width;
+	cout << "the are of the rectangele is " << area << 
+
+	etc....
+---------------------------------------------------------------------------------
+alwayss use cout to display a prompt before each cin statmeent
+----------------------------------------------------------------------------------
+
+
+cout <<"how tall is the room? ";
+	cin >> height;
+
+parenthesis override all mathemetical solutions 
+	-- otherwise (PEMDAS)
+
+there is no mathematical operation for exponents 
+	Area=s^2 is written as Area = pow(s, 2);
+
+
+
+TYPE CONVERSION
+	operations are performed between operands of the sam type
+	if not the same type, C++ will convert one to be the type of the other
+	This can impact the results of calculations
+
+
+5/3 = 1 
+5/3.0 = normal
+
+
+
+*TYPE CASTING IN PROGRAM 3-9*
+-----------------------------------------------
+sum = sum + 1;
+
+is equivalent to 
+
+sum += 1;
+------------------------------------------------
+
+
+*Stream manipulators*
+
+
+
+
+
+
+
+
+
+
+
+
+
+

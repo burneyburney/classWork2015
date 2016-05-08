@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Optional Lab 9-1: Ratings Page</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function WebLanguages (myName, MyBestPart, MyEaseToLearn)
+{
+   this.name = myName;
+   this.BestPart = MyBestPart;
+   this.EaseToLearn = MyEaseToLearn;
+}
+
+function show (LanguageShow)
+{
+   document.write ("Language Name: " + LanguageShow.name + "<br />");
+   document.write ("Best Part: " + LanguageShow.BestPart + "<br />");
+   document.write ("Ease of Learning: " + LanguageShow.EaseToLearn + "<br />");
+   document.write ("<hr />");
+}
+
+
+JS = new WebLanguages ("JavaScript", "Makes cool effects", "Moderate");
+JV = new WebLanguages ("Java", "Makes platform-independent applications", "Hard");
+HT = new WebLanguages ("X/HTML", "Makes pretty pages", "Easy");
+
+
+function start ()
+{
+   document.write("<h2>CIW JavaScript Specialist</h2>");
+   document.write("<h3>Rating Web Languages</h3>");
+   document.write ("<hr />");
+   show (HT);
+   show (JS);
+   show (JV);
+}
+// -->
+</script>
+</head>
+
+<body onload="start()">
+<h2>CIW JavaScript Specialist</h2>
+<h3>Rating Web Languages</h3>
+<hr />
+</body>
+</html>

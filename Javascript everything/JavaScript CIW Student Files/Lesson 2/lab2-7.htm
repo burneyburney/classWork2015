@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<title>Lab 2-7</title>
+</head>
+
+<!-- Add an onunload event handler that calls an alert() method -->
+
+<body>
+
+<h3>CIW JavaScript Specialist</h3>
+<hr />
+
+<script type="text/javascript">
+<!--
+
+/***************************************************
+  A variable named userName is created and assigned 
+  the value that results from a prompt() method
+***************************************************/
+
+var userName = prompt("What is your name?", "");
+
+/******************************************
+  The userName variable is used in alert() 
+  and document.write() statements.
+******************************************/
+alert("Welcome, " + userName + ".");
+document.write("Welcome, " + userName + ".");
+
+//-->
+</script>
+
+</body>
+</html>

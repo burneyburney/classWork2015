@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lab 3-3</title>
+
+<script type="text/Javascript">
+<!--
+
+var numCorrect = 0;
+
+function takeTest() {
+var response="";
+var points = 0;
+
+var q1 = "What company developed Javascript?";
+var a1 = "NETSCAPE";
+
+var q2 = "Using Javascript operator precedence,\n what is the result of the following expression? 2 + 4 * 6";
+var a2 = 26;
+
+var q3 = "With what object-oriented programming language\n is Javascript often compared and confused?";
+var a3 = "JAVA";
+
+response = prompt(q1,"");
+if (response) points = runningTotal((response.toUpperCase() == a1) ? 1 : 0);
+alert(points);
+
+response = prompt(q2,"");
+if (response) points = runningTotal((response == a2) ? 1 : 0);
+alert(points);
+
+response = prompt(q3,"");
+if (response) points = runningTotal((response.toUpperCase() == a3) ? 1 : 0);
+alert("You answered a total of " + points + " correctly.");
+
+numCorrect = 0;
+points = 0;
+}
+
+function runningTotal(i) {
+  numCorrect += i; 
+  return numCorrect;
+}
+
+// -->
+</script>
+
+</head>
+
+<body>
+
+<h3>CIW JavaScript Specialist</h3>
+<hr />
+Take an online quiz.
+<p>
+<form name="myform">
+<input type="button" value="Take Quiz" onclick="takeTest();" />
+</form>
+</p>
+
+
+</body>
+</html>

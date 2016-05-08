@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TEST PAGE</title>
+<script type="text/javascript">
+
+function switchtest(){
+alert("function runs")
+//var testGrade = parseInt(prompt("Input a Grade",100));
+var testGrade = 91;
+switch(testGrade){
+	case ((testGrade>=90)||(testGrade<=100)):
+		document.write("Your grade is an A");
+		break;
+	case ((testGrade>=80) || (testGrade<=89.9)):
+		document.write("Your grade is a B");
+		break;
+	//case >=69.5):
+	//	document.write("Your grade is a C");
+	//	break;
+	default:
+		document.write("Your grade is less than C");
+		break;
+	}
+}
+
+</script>
+</head>
+
+<body onload="switchtest();">
+<h2>Switch Test</h2><br>
+
+
+</body>
+</html>

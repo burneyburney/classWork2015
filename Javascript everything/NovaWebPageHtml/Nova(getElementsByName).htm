@@ -1,0 +1,47 @@
+<!-- that homework that i never did -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<head>
+	<meta charset="UTF-8">
+	<title>Web page</title>
+	<style>
+		body{
+			background-color: skyblue;
+		}
+		h1{
+			text-align: center;
+		}
+		.wrapper{
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+		<h1> sell this SHIT BOX </h1>
+
+		<script>			
+			var Nova = new Array(7);
+			var curNova = 0;
+			
+			for (var i = 0; i < 7; ++i) {
+				Nova[i] = new Image();
+				Nova[i].src = "Nova" + i + ".jpg";
+				if (i == 6)
+					setInterval("start()", 600);
+			}
+			
+			function start() {
+				if ( curNova ==6)
+					curNova = 0;
+				else
+					++curNova;
+				document.getElementsByName("NovaImage")[0].src = Nova[curNova].src;
+			}
+		</script>
+
+			<img src ="Nova0.jpg" name ="NovaImage" alt="Chevy Nova" style="width:500px;height:378px">
+
+		<div class = "wrapper">
+			1985 Chevy Nova (Toyota import)
+		</div>
+</body>
+</html>

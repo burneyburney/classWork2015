@@ -1,0 +1,115 @@
+<script language="javascript" type="text/javascript">
+<!--
+    // write out some introductory blurb and begin the table.
+	
+	document.writeln('<h3>CIW JavaScript Specialist</h3><hr />');
+    
+    document.writeln('<table width=470 align=center><tr><td><p class="narrow">' +
+                     'The table below shows the principal properties of your ' +
+                     'browser, the name by which it identifies itself, and ' +
+                     'the plug-ins supported. The final part of the table ' +
+                     'lists all the document types for which a plug-in has ' +
+                     'been defined, together with the name of the plug-in ' +
+                     'that handles each type. Types for which no plug-in is ' +
+                     'available are not shown.<' + '/p><hr /><' + 
+                     '/td><' + '/tr><' + '/table>');
+
+    document.writeln('<table cellpadding=2 cellspacing=1 border=0 ' +
+    				 'width=470 align=center><tr>');
+    document.writeln('<th width=100 align=left class="small"' + 
+    				 'bgcolor="#666699">Property<' + '/th>');
+    document.writeln('<th width=100 align=left class="small"' + 
+    				 'bgcolor="#666699">Variable<' + '/th>');
+    document.writeln('<th width=100 align=left class="small"' + 
+    				 'bgcolor="#666699">Value<' + '/th><' + '/tr>');
+
+    // set up the variables we need to test the first few properties
+
+    var number_of_values_to_test = 4;
+    var name_array = new Array(number_of_values_to_test);
+    var properties = new Array(number_of_values_to_test);
+    name_array[0] = "Application Name";
+    properties[0] = "appName";
+    name_array[1] = "Code Name";
+    properties[1] = "appCodeName";
+    name_array[2] = "Version";
+    properties[2] = "appVersion";
+    name_array[3] = "User Agent";
+    properties[3] = "userAgent";
+    
+    // Loop through the properties, outputting one table row for each one.
+    
+    for (var index=0;index < number_of_values_to_test;index++) {
+        document.write('<tr><td bgcolor="#9999cc" align=left class="small">' + 
+        			   name_array[index] + '<' + '/td>');
+        document.write('<td bgcolor="#ccccff" class="small">' + properties[index] +
+        			   '<' + '/td>');
+        document.write('<td bgcolor="#ccccff" class="small">' + 
+        			   navigator[properties[index]] + '<' + '/td>');
+        document.writeln('<' + '/tr>');
+    }
+    
+    // Write out details about the user's installed plug-ins
+    
+    document.write('<tr><td bgcolor="#9999cc" align=left class="small">Plug-Ins<' +
+    			   '/TD>');
+    document.write('<td bgcolor="#ccccff" class="small">plugins<' + '/td>');
+    document.writeln('<td bgcolor="#ccccff" class="small">');
+    if (navigator.plugins != null) {
+        for (var index=0;index < navigator.plugins.length; index++) {
+            document.writeln(navigator.plugins[index].name + '<br />');
+        }
+    }
+    else {
+        document.writeln("Browser doesn't recognize " +
+        				 "'navigator.plugins' property.");
+    }
+    document.writeln('<' + '/td><' + '/tr>');
+    
+    // Do the same for the MIME types. This is more complex, because we need to
+    // build a subtable within our main table, showing the types, their names
+    // and extensions, and the plug-in assigned to them.
+    
+    document.write('<tr><td bgcolor="#9999cc" align=left class="small">' + 
+    			   'MIME Types<' + '/td>');
+    document.write('<td bgcolor="#ccccff" class="small">mimeTypes<' + '/td>');
+    document.writeln('<td bgcolor="#ccccff" class="small">');
+    if (navigator.mimeTypes != null) {
+        document.writeln('<table>');
+        
+        document.writeln('<tr bgcolor="#9999cc">' +
+        				 '<th class="small" align=left bgcolor="#9999cc">' +
+        				 'mime type<' + '/th>' +
+        				 '<th class="small" align=left bgcolor="#9999cc">' +
+        				 'identifier<' + '/th>' +
+        				 '<th class="small" align=left bgcolor="#9999cc">' +
+        				 'extn.<' + '/th>' +
+        				 '<th class="small" align=left bgcolor="#9999cc">' +
+        				 'plug-in<' + '/th><' + '/tr>');
+        
+        for (var index=0;index < navigator.mimetypes.length; index++) {
+        if (navigator.mimetypes[index].enabledplugin != null) {
+            document.write('<tr><td class="small" valign=top>' + 
+            			   navigator.mimetypes[index].type +
+                           '<' + '/td><td class="small" valign=top>' + 
+                           navigator.mimetypes[index].description +
+                           '<' + '/td><td class="small" valign=top>' + 
+                           navigator.mimetypes[index].suffixes +
+                           '<' + '/td><td class="small" valign=top>' + 
+                           navigator.mimetypes[index].enabledplugin.name +
+                           '<' + '/td><' + '/tr>');
+            }
+        }
+        document.writeln('<' + '/table>');
+    }
+    else {
+        document.writeln("Browser doesn't recognize " + 
+        				 "'navigator.mimeTypes' property.");
+    }
+    document.writeln('<' + '/td><' + '/tr>');
+    
+    // finish up the table.
+    
+    document.writeln('<' + '/table>');
+// -->
+</script>

@@ -1,0 +1,52 @@
+ch 7 arrays
+
+C++ 
+
+7.1
+	Arrys hold multiple values
+
+Array - variable that can store multiple values of the same type
+values are stored in adjacent memory locations
+Declared using [] operator:
+	int tests[5];
+
+[1][2][3][4][5][6][7][8][9]
+
+int = data type of the array elements
+tests = is the name of the array
+The size of an array is:
+	the total number of byts occupied
+	(# of elements) * (# of bytes for each element)
+Examples:
+	int tess[5] ...
+
+		SIZE DECLARATORS
+const int SIZE = 5;
+int tests[SIZE];
+
+subscripts start at 0
+[0][1][2][3][4][5]
+subscript = SIZE - 1
+
+tests[0] = 79;
+cout << tests[0];
+cin >> tests[1];
+tests[4] = tests[0] + tests[1]
+
+
+cout << tests; // not legal
+
+7-1
+
+using a loop to step through an array
+
+7.3 
+no bounds checking in C++
+
+When you use a value as an array subscript, C++ does not check it to make sure it is a valid subscript
+
+begin subscript with 0
+
+const int SIZE = 5;
+int tests[SIZE] = {79,92,...};
+                                                                                 

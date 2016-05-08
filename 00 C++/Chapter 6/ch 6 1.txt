@@ -1,0 +1,23 @@
+ch 6
+
+defining and calling funcitons
+
+call a function if you want to execute
+
+no function call for the main()
+
+program 6-1
+
+field tech 40k ish
+http://www.indeed.com/cmp/C.-F.-Biggs-Co.-Inc./jobs/Field-Support-Technician-a4383deb6bfa6ad0
+
+slot tech hourly
+https://caesars.hodesiq.com/jobs/default.aspx?JobID=4998990&returnPath=job-search-results.aspx
+
+hardware support tech
+http://www.indeed.com/cmp/PioneerRx-Pharmacy-Software/jobs/Hardware-Support-Technician-9642c7a4bb12bd00?sjdu=QwrRXKrqZ3CNX5W-O9jEvTtD_lNiZMLjZCXDLACU3b1vxil448VCx0jr98dlujXXEZX9EbGE8fsV2KC8JdAyoON2s3MRTDP27dlsZAK4YxY
+
+software systems testing analyst
+http://agncorporation.catsone.com/careers/index.php?m=portal&a=details&jobOrderID=5071326&ref=indeed
+
+pg 350

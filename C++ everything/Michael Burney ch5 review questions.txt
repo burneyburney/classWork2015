@@ -1,0 +1,54 @@
+1. Why should you indent the statements in the body of a loop? 
+	By indenting the statements, you make them stand out from the surrounding code.This helps you to identify at a glance the statements that are conditionally executed by a loop.
+
+
+2. Describe the difference between pretest loops and posttest loops
+	A pretest loop tests its condition before each iteration. A posttest loop tests its condition after each iteration. A posttest loop will always execute at least once
+
+3. Why are the statements in the body of a loop called conditionally executed
+statements?
+	Because they are only executed when a condition is true
+
+4. What is the difference between the while loop and the do-while loop?
+	The while loop is a pretest loop and the do-while loop is a posttest loop.
+
+5. Which loop should you use in situations where you wish the loop to repeat until the
+test expression is false, and the loop should not execute if the test expression is false to
+begin with?
+	The while loop
+
+6. Which loop should you use in situations where you wish the loop to repeat until the
+test expression is false, but the loop should execute at least one time?
+	The do-while loop
+
+7. Which loop should you use when you know the number of required iterations?
+	The for loop.
+
+8. Why is it critical that counter variables be properly initialized?
+	A counter variable is used to control or keep track of the number of times a loop iterates. In a loop, the counter is usually incremented or decremented. If the counter variable is not properly initialized, it will not hold the correct number.
+
+9. Why is it critical that accumulator variables be properly initialized?
+	An accumulator is used to keep a running total of numbers. In a loop, a value is usually added to the current value of the accumulator. If it is not properly initialized, it will not contain the correct total.
+
+10.Why should you be careful not to place a statement in the body of a for loop that
+changes the value of the loop s counter variable?
+	Because the for loop has an update expression that normally changes the contents of a counter. If you have code inside that loop that also changes the counter, the loop will not be able to properly control the value of the counter.
+
+11. What header file do you need to include in a program that performs file operations?
+	fstream
+
+12. What data type do you use when you want to create a file stream object that can write data to a file?
+	ifstream
+
+13. When the increment or decrement operator is place before the operand (or to the operand's left), the operator is being used in __________ mode.
+	prefix
+
+14. Why should you close each program when you are finihsed using it?
+	By closing a file, any unsaved data that is held in the buffer is
+saved to its file. Also, when a program closes files that are no
+longer being used, the files will not take up more of the operating
+system's resources than necessary.
+
+15. What is a fil's read position? Where is the read position when a file is first openend for reading?
+	 When you write data to a file in append mode, the data is written to the end of the files existing contents
+

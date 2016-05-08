@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>CIW Products</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+    var content, oneWindow, suppWindow, fullWindow, len;
+    var oneWindowStatus = false;
+  var suppWindowStatus = false;
+    var fullWindowStatus = false;
+  
+    // This function closes any child windows when parent receives focus
+  function closeAllWindows() {
+      if((oneWindowStatus) && (!oneWindow.closed)) oneWindow.close();
+    if((suppWindowStatus) && (!suppWindow.closed)) suppWindow.close();
+      if((fullWindowStatus) && (!fullWindow.closed)) fullWindow.close();
+      oneWindowStatus = false;
+    suppWindowStatus = false;
+      fullWindowStatus = false;
+    }
+    
+  // Product constructor
+    function productObject(id,item,description,price,image,supplier) {
+      this.id = id;
+      this.item = item;
+      this.description = description;
+      this.price = price;
+      this.image = image;
+      this.supplier = supplier;
+      this.displayOne = displayOne;
+      this.displaySupplier = displaySupplier;
+    }
+  
+  //Supplier constructor
+    function supplier(name,address,city,state,country,phone,delivery) {
+    this.name = name;
+    this.address = address;
+    this.city = city;
+  this.state = state;
+    this.country = country;
+    this.phone = phone;
+    this.delivery = delivery;
+    }
+  
+  //Delivery constructor
+    function delivery(dName,dAddress,dCity,dState,dCountry,dPhone) {
+    this.dName = dName;
+    this.dAddress = dAddress;
+    this.dCity = dCity;
+  this.dState = dState;
+    this.dCountry = dCountry;
+    this.dPhone = dPhone;
+    }
+  
+  //Add delivery here
+    var deliveryArray = new Array();
+    deliveryArray[0] = new delivery("UPS", "123 Main St.", "Anywhere", "CA", "USA", "(555)555-1212");
+    deliveryArray[1] = new delivery("FedEx", "332 Elm St.", "Somewhere", "NY", "USA", "(555)555-1214");
+    deliveryArray[2] = new delivery("Joe's Delivery", "211 2nd St.", "Nowhere", "CA", "USA", "(555)555-1216");
+  
+  //Add suppliers here
+    var supplierArray = new Array();
+    supplierArray[0] = new supplier("Amy's Shirts & Hats", "111 Oak St.", "Hereandthere", "NY", "USA", "(555)555-8900", deliveryArray[0]);
+    supplierArray[1] = new supplier("Maria's Jackets & Sweaters", "331 Main St.", "Thereandback", "CA", "USA", "(555)555-3561", deliveryArray[1]);
+    supplierArray[2] = new supplier("Li's Notebooks & Backpacks", "404 Maple St.", "Wherever", "CA", "USA", "(555)555-3793", deliveryArray[2]);
+  
+    //Add products here
+    var products = new Array();
+    products[0] = new productObject("cp-01", "CIW Backpack", "Black woven backpack, blue-green lettering", "$25.00", "images/backpack.jpg", supplierArray[2]);
+    products[1] = new productObject("cp-02", "CIW Hat", "Brown canvas hat, blue-green lettering", "$20.00", "images/hat.jpg", supplierArray[0]);
+    products[2] = new productObject("cp-03", "CIW Suede Jacket", "Green suede, blue lettering", "$110.00", "images/suede.jpg", supplierArray[1]);
+    products[3] = new productObject("cp-04", "CIW Rain Jacket", "Green rainproof, blue lettering", "$100.00", "images/rain.jpg", supplierArray[1]);
+    products[4] = new productObject("cp-05", "CIW Polo Shirt", "White mesh polo, green lettering", "$30.00", "images/polo.jpg", supplierArray[0]);
+    products[5] = new productObject("cp-06", "CIW Denim Shirt", "Dark blue denim, blue lettering", "$50.00", "images/denim.jpg", supplierArray[0]);
+    products[6] = new productObject("cp-07", "CIW Sweatshirt", "Gray fleece pullover, green lettering", "$70.00", "images/sweat.jpg", supplierArray[1]);
+    products[7] = new productObject("cp-08", "CIW Sport Shirt", "Blue, blue-green lettering", "$30.00", "images/sport.jpg", supplierArray[0]);
+    products[8] = new productObject("cp-09", "CIW Sweater", "Blue scoop neck, short sleeve, green lettering", "$60.00", "images/sweater.jpg", supplierArray[1]);
+    products[9] = new productObject("cp-10", "CIW Notebook", "Black leather, blue lettering", "$75.00", "images/notebook.jpg", supplierArray[2]);
+  
+  len = products.length;
+  
+    // Displays data for individual products
+  function displayOne() {
+      content="";
+    content+="<html><head><title>" + this.item + "</title></head>";
+      content+="<body><div align='center'>";
+      content+="<table width='90%'><tr><td colspan='2' align='center'>";
+    content+="<h3>Item: " + this.item.bold() +  "</h3><hr /></td></tr>";
+    content+="<tr><td><strong>ID:</strong> " + this.id + "</td></tr>";
+      content+="<tr><td><strong>Description:</strong> " + this.description + "</td></tr>";
+      content+="<tr><td><strong>Price:</strong> " + this.price.bold().fontcolor("#0000FF") + "</td></tr>";
+    content+="<tr><td><img src= '" + this.image + "' height='75' width='75'>" + "</td></tr>";
+      content+="</td></tr></table><form>";
+      content+="<input type='button' value='OK' onclick='window.close();' />";
+      content+="</form></div></body></html>";
+    
+    oneWindow = open("","OneWindow","width=450,height=290");
+    newWindow(oneWindow);
+    oneWindowStatus = true;
+    }
+  
+  // Displays data for individual suppliers
+  function displaySupplier() {
+      content="";
+      content+="<html><title>" + this.supplier.name + "</title>";
+      content+="<body><h3>Supplier Information</h3><hr />";  
+      content+="<p><strong>Item:</strong> " + this.item + "</p>";
+      content+="<p><strong>Supplier:</strong> " + this.supplier.name + "<br />";
+      content+="<strong>Address:</strong><br />" + this.supplier.address + "<br />";
+      content+=this.supplier.city + ", " + this.supplier.state + " " + this.supplier.country + "<br />";
+      content+="<strong>Phone:</strong> " + this.supplier.phone.fontcolor("#0000FF") + "</p>";
+      content+="<p><strong>Shipper:</strong> " + this.supplier.delivery.dName + "<br />";
+      content+="<strong>Address:</strong><br />" + this.supplier.delivery.dAddress + "<br />";
+      content+=this.supplier.delivery.dCity + ", " + this.supplier.delivery.dState + " " + this.supplier.delivery.dCountry + "<br />";
+      content+="<strong>Phone:</strong> " + this.supplier.delivery.dPhone.fontcolor("#0000FF") + "</p>";
+      content+="<div align='center'><form>";
+      content+="<input type='button' value='OK' onclick='window.close();' />";
+      content+="</form></div></body></html>";
+      suppWindow = open("","","scrollbars=1,width=300,height=390");
+      newWindow(suppWindow);
+      suppWindowStatus = true;
+    }
+
+  // Matches product ID (user input) to product name
+    function findItem() {
+    var i = 0;
+      while (i < len && products[i].id != document.prodForm.idText.value.toLowerCase()) {
+    i++;
+    }
+    if (i < len) {
+        var message = "";
+      message += "ID:\t" + products[i].id;
+      message += "\nItem:\t" + products[i].item; 
+      alert(message);
+    } else {
+      var message = "It appears you have entered a discontinued ID.\n";
+    message += "Available IDs:\n\n";
+          for (j = 1; j < len + 1; j++) {
+          if(!(j % 3)){
+              message += products[j - 1].id + "\n";
+            } else {
+          message += products[j - 1].id + "\t";
+        }
+      }
+      message += "\n\nPlease try again.";
+      alert(message);
+    }
+    }
+  
+  // Matches supplier to item entered in form
+    function findItemSupplier() {
+    var i = 0;
+      while (i < len && products[i].item.toUpperCase()!= document.prodForm.prodSupplier.value.toUpperCase()) {
+      i++;
+  }
+    if (i < len) {
+      var message = "Item:\n" + products[i].item;
+        message += "\n\nSupplier:\n";
+      message += products[i].supplier.name + "\n";
+        message += products[i].supplier.phone;
+      alert(message);
+    } else {
+      var message = "It appears you have entered a discontinued item.\n\n";
+          message += "Available Items:\n\n";
+            for (j = 0; j < len; j++){
+              message += products[j].item + "\n"; 
+        }
+      message += "\nPlease try again.";
+      alert(message);
+    }
+    }
+
+  // Shows product names, prices, supplier names
+    function showAll() {
+    content="";
+    content+="<html><head><title>All CIW Products</title></head>";
+    content+="<body><div align=center>";
+    content+="<table width='90%' border cellpadding='2'>";
+    content+="<tr><th colspan='3' align='center'>";
+    content+="CIW Product Information</th></tr>";
+    content+="<tr><th>Item</th><th>Price</th><th>Supplier</th></tr>";
+  
+  for (var i = 0; i < len; i++) {
+      content+="<tr><td>";
+    content+="<a href='javascript:void(window.opener.products[" + i + "].displayOne());'>";
+    content+=products[i].item + "</a></td>";
+    content+="<td>" + products[i].price + "</td>";
+    content+="<td><a href='javascript:void(window.opener.products[" + i + "].displaySupplier());'>";
+      content+=products[i].supplier.name + "</a>" + "</td></tr>";
+      }
+    
+    content+="</table><form>";
+    content+="<input type='button' value='OK' onclick='window.close();' />";
+    content+="</form></div></body></html>";
+    fullWindow = open("","AllWindow","width=460,height=410,resizable=1");
+    newWindow(fullWindow);
+    fullWindowStatus = true;
+    }
+
+  // Opens windows for displayOne(), displaySupplier() and showAll()
+    function newWindow(x) {
+      x.document.close();
+      x.document.open();
+      x.document.write(content);
+      x.document.close();
+      x.moveTo(10,10);
+      x.focus();
+    }
+
+//-->
+</script>
+</head>
+<body onfocus="closeAllWindows();">
+<div align="center">
+<h2>CIW Products</h2>
+<hr />
+<form name="prodForm">
+<table width="100%">
+<tr>
+<td width="50%" align="right">
+<select name="itemName">
+<script language="JavaScript" type="text/javascript">
+<!--
+
+  // Generates <option> tags using products array
+  for (var i = 0; i < len; i++) {
+    document.write("<option>" + products[i].item + "</option>");
+  }
+  
+//-->
+</script></select></td>
+<td>
+
+<!-- Invokes displayOne() for individual products -->
+
+<input type="button" value="Get Info" onclick=
+" var i = document.prodForm.itemName.selectedIndex; products[i].displayOne();">
+<!-- Invokes displaySupplier() for individual products -->
+<input type="button" value="Get Supplier Info" onclick=
+" var i = document.prodForm.itemName.selectedIndex; products[i].displaySupplier();" /></td>
+</tr>
+<tr>
+<td align="right"><strong>Search by product ID:</strong> 
+<input type="text" size="5" name="idText" /></td>
+<td>
+<input type="button" value="Search" onclick="findItem();" /></td>
+</tr>
+<tr>
+<td align="right"><strong>Search by product name:</strong> <input type=
+"text" size="20" name="prodSupplier" /></td>
+<td><input type="button" value="Search Suppliers" onclick=
+"findItemSupplier();" /></td>
+</tr>
+<tr>
+<td colspan="2" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="button" value=
+"Show All Products" onclick="showAll();" /></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

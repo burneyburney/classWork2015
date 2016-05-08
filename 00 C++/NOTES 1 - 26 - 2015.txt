@@ -1,0 +1,100 @@
+NOTES 1/26/2015
+
+comments begin with //
+#include <iostream>  preprocessor directive
+std;  <-- which namespace to use
+int main() (main is name of function)(parenthesis after varible = function)
+{Beggining block
+program here.
+ending of block}
+
+special characters 
+
+; = ending of statement.
+
+cout = displays the output on the screen
+cout << "Programming is fun!";
+cout << "Hello " << "there!";     same thng. displays on one line.
+
+endl = manipulator to start a new line of output this will produce 2 lines of output.
+
+cout <<"Programming is" << endl;
+cout <<"fun!";
+
+you do not put quotes around endl
+
+\n = escape sequence
+
+cout << "Programming is \n";  
+cout << "fun!";
+
+#include  =  inserts contents of another file into the program
+		preprocessor directive
+		NO semicolon after #include
+
+variable = storage location in memory
+		has to have name, and type of data
+		must be defined before it can be used
+
+int item;  = Varaible definition
+
+apples = 20;  =  integer literal  (hard coded) (not a variable)
+
+identifier = programmer defined name (part of program)
+
+C++ Key words
+
+variable name = itemsOrdered   -   camelcase 
+
+
+
+totalSales
+total_Sales
+total.Sales no
+4thQtrSales no 
+
+Integer Data Types *
+
+-+-*-*--*-*-*-/+-++--+-+-*/-*+/-++*/-+*/8-+*-
+3 variables 
+...
+using namespacde std;
+
+int main()
+{
+	int checking;
+	unsigned int miles;
+	long days;
+
+	checking = -20;
+
+	...
+-+*+-**-+-++--+*+-*-+*-+*+-*-*-*--**+-+*-+-+-*+*
+
+Integer literals are stored in memory as ints by default
+
+numbers are stored in base 10 | some people prefer based 8 or 16
+
+
+LETS GO OVER HEX
+1 2 3 4 5 6 7 8 9 
+A B C D E
+
+
+
+Character literals must be enclosed in single quotes
+strings are double quotes 
+...
+letter= 'A';
+cout <<letter <<'\n;
+...
+
+string terminated by \0 (null terminator)
+
+firstName = "George";
+lastName = "Washington";
+
+
+
+
+

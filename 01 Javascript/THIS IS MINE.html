@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pass 2args</title>
+
+<script type="text/javascript">
+
+
+/****************************************************************
+  A function named myFunction() is defined.
+  The function displays an alert() when the button is clicked.
+  The function receives an argument and uses its value.
+  Modify the function to return a value to the calling statement.
+****************************************************************/
+/*  
+  function myFunction(arg1) {
+    alert("The function has been called and was passed " + arg1);
+	return "This is a return string put in the alert box";
+  
+  }
+*/
+
+</script>
+</head>
+<body>
+<h3>CIW JavaScript Specialist</h3>
+<hr />
+<!-- 
+     A form button is used to call the function.
+     A value is passed as an argument to the function. 
+     The function returns a value to the calling statement.
+     Put an alert() method to show the answer. 
+-->
+
+<form name="myForm" id="myForm">
+Enter 1st number:&nbsp; &nbsp; <input type="text" name="num1" size="6">  
+<br>
+
+Enter 2nd number:&nbsp; &nbsp; <input type="text" name="num2" size="6">  
+<br>
+
+<input type="button" value="Call Function" onClick="myFunction(num1,num2);"/>
+
+<input type="button" value="Next Function" onClick="myFunction(23,56);"/>
+
+<input type="reset" value="Reset"/>
+
+</form>
+
+<script type="text/javascript">
+ 	function myFunction(arg1,arg2) 
+	{
+	arg1 = document.write.myForm.num1.value;
+	arg2 = document.write.myForm.num2.value;
+	var arg = arg1+arg2;
+	//alert("inside function");
+	//var arg;
+	//arg = parseint(arg1+arg2);
+	//alert(arg1+"and"+arg2);
+	alert("2 numbers were passed and they equal = "+arg);  
+	//alert("ANSWER = "+arg)
+  }
+</script>
+
+</body>
+</html>

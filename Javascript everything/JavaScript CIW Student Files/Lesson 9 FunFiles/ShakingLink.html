@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shaking Link</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var shakeVar;
+var direction = "left";
+function shakeLink() {
+	if (direction == "left") {
+		document.getElementById("earthquake").style.left="3px";
+		direction = "right";
+
+	}
+	else {
+		document.getElementById("earthquake").style.left="0px";
+		direction = "left";
+	}
+}
+/* ]]> */
+</script>
+</head>
+<body>
+<p>Touch the link!</p>
+<p><a id="earthquake" style="position: relative" href="http://www.earthquake.com" onmouseover="shakeVar=setInterval('shakeLink()', 10);" onmouseout="clearTimeout(shakeVar);">Global Earthquake Response Center</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿Build started 2/1/2015 10:33:05 PM.
+     1>Project "C:\Users\Michael\Desktop\Total Purchase\Total Purchase\Total Purchase.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(9): error C2144: syntax error : 'int' should be preceded by ';'
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(12): error C2143: syntax error : missing ';' before 'constant'
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(12): error C2065: 'subtotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(12): error C2065: 'taxTotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(12): error C2065: 'total' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(15): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(16): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(17): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(18): error C2065: 'item4' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(19): error C2065: 'item5' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(27): error C2065: 'item4' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(28): error C2065: 'item5' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(31): error C2065: 'subtotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(31): error C2143: syntax error : missing ';' before 'constant'
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(31): error C2065: 'item5' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(34): error C2065: 'subtotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(39): error C2065: 'subtotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(47): error C2065: 'total' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(47): error C2065: 'subtotal' : undeclared identifier
+     1>c:\users\michael\desktop\total purchase\total purchase\source.cpp(50): error C2065: 'total' : undeclared identifier
+     1>Done Building Project "C:\Users\Michael\Desktop\Total Purchase\Total Purchase\Total Purchase.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.94

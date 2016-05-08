@@ -1,0 +1,21 @@
+visually scanned source code for errors
+
+used alert box in Validate entries function (workOrderTesting.html)
+	could get inside function. 
+
+couldnt move any further.
+
+re typed source code (workOrderTyped.html)
+	alert box wouldn't show
+
+re typed AGAIN using a darker background and brigher color scheme (workOrderRetyped.html)
+	found an <h1> tag not opened properly.
+
+ran IE debugger 
+	found issue with validateEntries not being declared properly
+
+couldnt resolve issue. 
+
+slowly scanned source code for common errors.
+
+stoped.

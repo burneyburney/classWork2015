@@ -1,0 +1,20 @@
+<script type="text/javascript">
+mactest=(navigator.userAgent.indexOf("Mac")!=-1) //My browser sniffers
+
+is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
+
+Netscape=(navigator.appName.indexOf("Netscape") != -1)
+
+msafari=(navigator.userAgent.indexOf("Safari")!= -1)
+
+wsafari=0; if(!mactest&&msafari){wsafari=1;msafari=0}
+
+is_opera = 0; if(window.opera){is_opera=1}
+
+is_ie_mac = 0; is_ie=0;if(document.all){is_ie=1}
+
+if(is_ie&&mactest){is_ie_mac=1}
+
+alert("mactest:"+mactest+", Netscape:"+Netscape+", wsafari:"+wsafari+", msafari:"+msafari+", is_ie:"+is_ie+", is_ie_mac:"+is_ie_mac+", is_opera:"+is_opera+", is_chrome:"+is_chrome)
+
+</script>

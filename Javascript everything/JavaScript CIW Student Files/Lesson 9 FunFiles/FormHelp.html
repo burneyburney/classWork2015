@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form Help</title>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function showHelp(elementId) {
+	var curElement = document.getElementById(elementId);
+	var helpElement = document.getElementById("box");
+	switch (elementId) {
+		case "username":
+			helpElement.innerHTML = "Enter a unique user name that is between 5 and 12 characters.";
+			break;
+		case "password":
+			helpElement.innerHTML = "Enter a password between 6 and 10 characters that contains both upper and lowercase letters and at least one numeric character. ";
+			break;
+		case "password_confirm":
+			helpElement.innerHTML = "Confirm your selected password. ";
+			break;
+		case "challenge":
+			helpElement.innerHTML = "Enter your mother's maiden name. This value will be used to confirm your identity in the event that you forget your password. ";
+			break;
+	}
+	helpElement.innerHTML += "<a href='' onclick=\"document.getElementById('box').style.visibility='hidden';return false;\">Close</a>";
+	document.getElementById("box").style.visibility = "visible";
+	document.getElementById("box").style.left = curElement.offsetWidth + 20 + "px";
+	document.getElementById("box").style.top = curElement.offsetTop + "px";
+}
+/* ]]> */
+</script>
+</head>
+<body>
+<h1>Form Help</h1>
+<form action="" method="get"
+enctype="application/x-www-form-urlencoded">
+<p><strong>User name</strong><br />
+<input type="text" id="username" size="50" onmouseover="this.style.cursor='help'" onclick="showHelp(this.id)" /></p>
+<p><strong>Password</strong><br />
+<input type="password" id="password" size="50" onmouseover="this.style.cursor='help'" onclick="showHelp(this.id)" /></p>
+<p><strong>Confirm password</strong><br />
+<input type="password" id="password_confirm" size="50" onmouseover="this.style.cursor='help'" onclick="showHelp(this.id)" /></p>
+<p><strong>What is your mother's maiden name?</strong><br />
+<input type="password" id="challenge" size="50" onmouseover="this.style.cursor='help'" onclick="showHelp(this.id)" /></p>
+</form>
+<div id="box" style="position: absolute; visibility: hidden; width: 250px; background-color:#FFFFC0; font:Comic Sans MS; color: #A00000;border:1px dashed #D00000"></div>
+</body>
+</html>

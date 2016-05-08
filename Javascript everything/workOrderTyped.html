@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>
+			Al's Body Shop
+		</title>
+	<meta name="GENERATOR">
+	<script type="text/javascript">
+	<!-- 
+		function validateEntries(){
+			alert("IM IN THE FUNCTION")
+			var woID = document.frmOrder.txtWODate.value);
+			var woDate = new Date(document.frmOrder.txtWODate.value);
+			var woVIN = document.frmOrder.txtVIN.value;
+			var paidStatus;
+
+			if (document.frmOrder.chkPaid.checked == true){
+				paidStatus = "PAID";
+			  }	else {
+			  	  paidstatus = "NOT PAID";
+			}
+			var woServiceID = document.frmOrder.1stService.selectedIndex;
+			var woServiceValue = document.frmOrder.1stService.options[woServiceID].text;
+			if (woID == ""|| isNaN(woID)){
+				alert("Please enter a value for Work Order ID.");
+				document.frmOrder.txtWOID.select();
+				return false;
+			} else if (woDate ==""){
+				alert("Please enter a value for Work Order Date.");
+				document.frmOrder.txtWODate.select();
+				return false;
+			} else if (woVIN ==""){
+				alert("Please enter a value for VIN.");
+				document.frmOrder.txtVIN.select();
+				return false;
+			/*} else if (isNaN(woID)){
+				alert("Pleae enter a number value for Work Order ID.");
+				document.frmOrder.txtWOID.select();
+				return false; */
+			} else if (woDate =="NaN"){
+				alert("Please enter a date value for Work Order Date in the format MM/DD/YYYY");
+				document.frmOrder.txtWODate.select();
+				return false;
+			} else {
+				var txtMsg = "Work Order ID: " +woID+ "\n" +
+							 "Work Order Date: " +woDate+ "\n" +
+							 "VIn:" + woVIn + "\n" +
+							 "Service: " + woServiceValue + "\n" +
+							 "Status: " + paidStatus;
+				if (confirm(txtMsg)){
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+	}
+	//->
+	</script>
+	</head>
+	<body>
+		<form name="frmOrder" action="" onsubmit="return validateEntries()">
+		<table align=center width=377 height=121>
+		<tr><td><img src="car.jpg" height=115 style="width: 184px"></td><td><h1 align=center>Work Orders</h1></td></tr>
+		</table>
+
+		<table border="2" align=center>
+			<tr><td>Work Order ID: <input type=text name=txtWOID size=6></td>
+				<td>VIN:&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <input type=text name=txtVIN size=30></td></tr>
+		<tr><td>Date:&nbsp;<input type=text name=txWODate size=10></td>
+				<td>Service:&nbsp; &nbsp;<select name=lstService size=1>
+          <option selected>Oil Change</option>
+          <option>Rotate Tires</option>
+          <option>Radiator Service</option>
+          <option>Car Wash</option>
+          <option>Lube Chassis</option>				
+				</select></td></tr>
+		<tr><td>Paid?&nbsp;<input type=checkbox name="chkPaid" value="PAID"></td>
+			  <td align="center"><input type="submit" value="Submit"></td>
+			  <td align="center"><input type="reset" value="Reset"></td></tr>
+		</table>
+		</form>
+	</body>
+</html>

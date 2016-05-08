@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Warp</title>
+<meta http-equiv="content-type" content="text/html;
+charset=iso-8859-1" />
+</head>
+<body style="background-color:navy">
+<script type="text/javascript">
+/* <![CDATA[ */
+var starCount=20;
+var warpSpeed=3;
+var heightMax;
+var widthMax;
+var yCurPos;
+var xCurPos;
+var xPosition=new Array();
+var yPosition=new Array();
+var rPosition=new Array();
+var radix=new Array();
+var tx="";
+function moveSlide(name,sLeft, sTop) {
+	document.getElementById(name).style.top=sTop + "px";
+	document.getElementById(name).style.left=sLeft + "px";
+}
+function sizeSlide(name,sWdh, sHgt) {
+	document.getElementById(name).style.width=sWdh + "px";
+	document.getElementById(name).style.height=sHgt + "px";
+}
+function positions(){
+	if (navigator.appName == "Microsoft Internet Explorer") {
+		heightMax=window.document.documentElement.clientHeight;
+		widthMax=window.document.documentElement.clientWidth;
+		yCurPos=document.documentElement.scrollTop;
+		xCurPos=document.documentElement.scrollLeft;
+	}
+	else {
+		heightMax=window.innerHeight;
+		widthMax=window.innerWidth-18;
+		yCurPos=window.screenY;
+		xCurPos=window.screenX;
+	}
+}
+positions();
+for (i=0; i<starCount;i++) {
+	yPosition[i]=heightMax/2;
+	xPosition[i]=widthMax/2;
+	rPosition[i]=Math.random()*6.283;
+	radix[i]=0;
+	document.write("<div id=star_"+i+"  style='z-index:0; position:absolute; left:0;top:0;width:1;height:1;background:#ffffff'><img  width=1 height=1></div>");
+	document.write (tx);tx="";
+}
+function go_stars(){
+positions();
+var rad_max=Math.sqrt(widthMax*widthMax+heightMax*heightMax)/2;
+	for (i=0; i < starCount;i++) {
+		var rad=Math.sqrt(Math.pow((yPosition[i]-heightMax/2),2)+Math.pow((xPosition[i]-widthMax/2),2))/rad_max*4+1;
+		yPosition[i]+=Math.round(Math.sin(rPosition[i])*rad*warpSpeed);
+		xPosition[i]+=Math.round(Math.cos(rPosition[i])*rad*warpSpeed);
+		if ((xPosition[i] > widthMax-rad*2) || (yPosition[i] < 0 ) || (yPosition[i] > heightMax-rad*2) || (xPosition[i] < 0)) {
+			yPosition[i]=heightMax/2;
+			xPosition[i]=widthMax/2;
+			rPosition[i]=Math.random()*6.283;
+			sizeSlide("star_"+i,1,1);
+			moveSlide("star_"+i,xPosition[i]+xCurPos,yPosition[i]+yCurPos);
+		}
+		else{
+			if(Math.floor(rad)!=radix[i])
+				sizeSlide("star_"+i,rad,rad);radix[i]=rad;
+			moveSlide("star_"+i,xPosition[i]+xCurPos,yPosition[i]+yCurPos);
+		}
+	}
+}
+starSpeed=setInterval('go_stars()',15);
+/* ]]> */
+</script>
+</body>
+</html>
